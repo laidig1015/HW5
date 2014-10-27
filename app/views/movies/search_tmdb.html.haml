@@ -1,0 +1,18 @@
+%h1 Movies Matching #{@search_terms}
+
+= form_tag 'movies/add_tmdb' do
+  %table#movies
+    %thead
+      %tr
+        %th Movie Title
+        %th Movie Rating
+        %th Release Date
+        %th Select
+    %tbody
+      - @search_results.each do |movie|
+        %tr
+          %td= movie[:title] 
+          %td= movie[:rating]
+          %td= movie[:release_date]
+          %td=check_box_tag "tmdb_movies[#{movie[:tmdb_id]}]"
+  = submit_tag "Add Selected Movie To RottenPotatoes"

@@ -5,7 +5,9 @@ ruby '1.9.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pry'
 
+gem 'themoviedb'
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
   gem 'sqlite3'
