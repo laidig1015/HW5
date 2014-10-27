@@ -82,7 +82,7 @@ class MoviesController < ApplicationController
     else
       movies_to_add = params["tmdb_movies"].keys
       Movie::create_from_tmdb(movies_to_add)
-      flash[:notice] = "Movies Successfully Added to Rottenpotatoes!"
+      flash[:notice] = "Movie(s) Successfully Added to Rottenpotatoes!"
       redirect_to movies_path
     end
   end
