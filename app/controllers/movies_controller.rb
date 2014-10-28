@@ -60,12 +60,12 @@ class MoviesController < ApplicationController
   def search_tmdb
     search = params["search_terms"]
     if search.blank? then
-      flash[:notice] = "Invalid Search"
+      flash[:notice] = "Invalid Search Term"
       redirect_to movies_path
     else
       all_results = Movie::find_in_tmdb(search)
       if all_results.empty? then
-        flash[:notice] = "No Matches Found"
+        flash[:notice] = "No matching movies were found on TMDb"
         redirect_to movies_path
       else
         @search_results = all_results
@@ -77,7 +77,7 @@ class MoviesController < ApplicationController
 
   def add_tmdb
     if params["tmdb_movies"] == nil
-      flash[:notice] = "No Movies Selected to Add"
+      flash[:notice] = "No Movies Selected"
       redirect_to movies_path
     else
       movies_to_add = params["tmdb_movies"].keys
