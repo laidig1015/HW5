@@ -5,6 +5,8 @@ ruby '1.9.3'
 
 gem 'themoviedb'
 
+gem 'simplecov', :require => false, :group => :test
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
